@@ -1,13 +1,11 @@
 <template>
-    <div class="div">旅游攻略首页</div>
+ <div class="post"></div>
 </template>
 
 <script>
-export default {
 
-}
 </script>
 
-<style>
+<style scoped>
 
 </style>

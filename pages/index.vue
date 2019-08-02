@@ -28,7 +28,7 @@
         </el-row>
         <!-- 输入框 -->
         <el-row type="flex" align="middle" class="search-input">
-          <input :placeholder=" options[current].placeholder " />
+          <input :placeholder=" options[current].placeholder" />
           <i class="el-icon-search"></i>
         </el-row>
       </div>
@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     handleClick(index) {
-      // 点击机票
+      // index=2的时候,点击机票实现页面跳转,nuxt中封装了;路由,页面中可以使用$router.push的方法
       if (index === 2) {
         this.$router.push("/air");
       }

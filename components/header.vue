@@ -7,7 +7,6 @@
           <img src="http://157.122.54.189:9093/images/logo.jpg" alt />
         </nuxt-link>
       </div>
-
       <!-- 菜单栏 -->
       <!-- 使用flex布局,使用nuxt-link标签中to属性决定跳转路径,使用添加类名的方式动态加载样式 -->
       <el-row type="flex" class="navs">
@@ -29,7 +28,6 @@
             </nuxt-link>
             <i class="el-icon-caret-bottom el-icon--right"></i>
           </el-row>
-          
           <el-dropdown-menu slot="dropdown" class="hahaha">
               <el-dropdown-item>
                 <nuxt-link to="#">个人中心</nuxt-link>
@@ -42,20 +40,25 @@
         <!-- 不存在用户信息展示登录注册链接 -->
         <nuxt-link to="/user/login" class="account-link" v-else>登录 / 注册</nuxt-link>
       </el-row>
+
+      
     </el-row>
   </div>
 </template>
 
 <script>
 export default {
+  // 数据
   data() {
     return {};
   },
+  // 方法
   methods: {
     handleLogout() {
       this.$store.commit("user/setUserinfo", {});
     }
   },
+  // 钩子
   mounted() {
     console.log(this.$store.state.user.userInfo);
   }
@@ -119,6 +122,7 @@ export default {
       font-size: 18px;
     }
   }
+
 .hahaha {
     z-index: 9;
     float: right !important;
@@ -156,5 +160,6 @@ export default {
     }
   }
 }
+
 </style>
 

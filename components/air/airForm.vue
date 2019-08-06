@@ -84,8 +84,9 @@ export default {
           };
         });
         // //  设置第一个为选中的默认值
-        this.form.destCity = arr[0].value;
-        this.form.destCode = arr[0].sort;
+       
+        // this.form.destCity = arr[0].value;
+        // this.form.destCode = arr[0].sort;
         cb(arr);
       });
     },
@@ -109,10 +110,23 @@ export default {
     },
     //提交表单
     onSubmit() {
+      
+      for (const key in this.form) {
+        if (!this.form[key]) {
+          this.$alert('请完善表单','提示',{
+            type:'warning'
+          })
+          return
+        }
+      }
       this.$router.push({
-        path: "/air/fights",
+        path: "/air/flights",
         query: this.form
       });
+      //提交表单的同时,将表单内容存储到vuex
+      this.$store.commit('air/setForminfo',this.form)
+
+
     }
   }
 };

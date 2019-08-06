@@ -40,8 +40,6 @@
         <!-- 不存在用户信息展示登录注册链接 -->
         <nuxt-link to="/user/login" class="account-link" v-else>登录 / 注册</nuxt-link>
       </el-row>
-
-      
     </el-row>
   </div>
 </template>
@@ -60,7 +58,6 @@ export default {
   },
   // 钩子
   mounted() {
-    console.log(this.$store.state.user.userInfo);
   }
 };
 </script>

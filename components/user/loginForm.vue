@@ -49,7 +49,7 @@ export default {
             method:'post',
             data:this.userform
           }).then(res=>{
-            console.log(res.data)
+            // console.log(res.data)
             // 使用store.commit方法时传入两个参数,第一个参数是传值的位置在哪个js文件下的哪个方法名
             // 第二个参数是传入的值
             this.$store.commit('user/setUserinfo',res.data)

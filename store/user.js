@@ -1,10 +1,10 @@
 //数据
-export const state={
+export const state=()=>({
     userInfo:{
         token: "",
-        user: {},
+        user: {}
     }
-}
+})
 //存储数据(同步)
 export const mutations={
     // 传入两个参数,第一个参数是上面的需要调用时的state,第二个是传入的数据,这里使用解构赋值
